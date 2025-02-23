@@ -1,0 +1,23 @@
+.cross {
+	color: rgb(73, 105, 73);
+	text-shadow: 5px 5px 10px rgb(73, 105, 73);
+	transition: 50ms linear;
+}
+.cross__inCell {
+	font-size: 80px;
+	line-height: 80px;
+}
+.cross__inCell:hover {
+	font-size: 90px;
+	line-height: 90px;
+}
+
+.cross__small {
+	font-size: 30px;
+	line-height: 30px;
+}
+
+.cross__small:hover {
+	color: rgb(9, 116, 9);
+	text-shadow: 5px 5px 10px rgb(9, 116, 9);
+}
