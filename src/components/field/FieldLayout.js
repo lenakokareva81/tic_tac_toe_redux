@@ -1,19 +1,8 @@
 import styles from "./FieldLayout.module.css";
-import { Zero, Cross } from "../../components";
-import { PLAYER } from "../../constants";
-import { store } from "../../store";
-import { useState, useEffect } from "react";
+import { drawFigure } from "../../utils";
 import { handelCellClik } from "../../handlers";
 
-export const FieldLayout = () => {
-  const [onNext, setOnNext] = useState(store.getState());
-
-  useEffect(() => {
-    const unsubscribe = store.subscribe(() => setOnNext(store.getState()));
-    return unsubscribe;
-  }, []);
-
-  const { field } = onNext;
+export const FieldLayout = ({ field }) => {
   return (
     <div className={styles.container}>
       {field.map((cellPlayer, index) => (
@@ -22,8 +11,7 @@ export const FieldLayout = () => {
           onClick={() => handelCellClik(index)}
           key={index}
         >
-          {cellPlayer === PLAYER.TIC ? <Cross size="cross__inCell" /> : ""}
-          {cellPlayer === PLAYER.TAC ? <Zero size="zero__inCell" /> : ""}
+          {drawFigure(cellPlayer, { place: "inCell" })}
         </div>
       ))}
     </div>

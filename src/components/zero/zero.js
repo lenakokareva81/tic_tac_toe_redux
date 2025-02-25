@@ -1,5 +1,5 @@
 import styles from "./zero.module.css";
 
-export const Zero = ({ size }) => {
-	return <div className={`${styles.zero} ${styles[size]}`}></div>;
+export const Zero = ({ place }) => {
+  return <div className={`${styles.zero} ${styles[place]}`}></div>;
 };

@@ -1,6 +1,6 @@
-import { PLAYER_ACTION, STATUS, PLAYER } from "../../constants";
+import { PLAYER_ACTION, STATUS } from "../../constants";
 import { InformationLayout } from "./informationLayout";
-import { Cross, Zero } from "../../components";
+
 import { store } from "../../store";
 import { useState, useEffect } from "react";
 
@@ -16,19 +16,11 @@ export const Information = () => {
 
   const playerAction = PLAYER_ACTION[status];
   const information = status === STATUS.DRAW ? "ничья" : `${playerAction}`;
-  const drawFigure = (currentPlayer) => {
-    return currentPlayer === PLAYER.TIC ? (
-      <Cross size="cross__small" />
-    ) : (
-      <Zero size="zero__small" />
-    );
-  };
 
   return (
     <InformationLayout
       currentPlayer={currentPlayer}
       information={information}
-      drawFigure={drawFigure}
     />
   );
 };
