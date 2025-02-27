@@ -8,6 +8,7 @@ export const initialState = {
 };
 
 export const appreducer = (state = initialState, { type, payload }) => {
+  console.log(type, payload);
   switch (type) {
     case "SET_CURRENT_PLAYER":
       return {

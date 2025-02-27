@@ -30,4 +30,5 @@ export const handelCellClik = (cellIndex) => {
   } else {
     store.dispatch({ type: "SET_STATUS", payload: STATUS.DRAW });
   }
+  // console.log(store.getState());
 };

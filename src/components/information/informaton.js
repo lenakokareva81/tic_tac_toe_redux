@@ -1,18 +1,10 @@
 import { PLAYER_ACTION, STATUS } from "../../constants";
 import { InformationLayout } from "./informationLayout";
 
-import { store } from "../../store";
-import { useState, useEffect } from "react";
+import { useAppState } from "../../hooks";
 
 export const Information = () => {
-  const [onNext, setOnNext] = useState(store.getState());
-
-  useEffect(() => {
-    const unsubscribe = store.subscribe(() => setOnNext(store.getState()));
-    return unsubscribe;
-  }, []);
-
-  const { status, currentPlayer } = onNext;
+  const { status, currentPlayer } = useAppState();
 
   const playerAction = PLAYER_ACTION[status];
   const information = status === STATUS.DRAW ? "ничья" : `${playerAction}`;
