@@ -1,5 +1,5 @@
-import { store } from "../store";
+import { RESTART_GAME } from "../actions";
 
-export const handleRestart = () => {
-  store.dispatch({ type: "RESTART_GAME" });
+export const handleRestart = (dispatch) => {
+  dispatch(RESTART_GAME);
 };
